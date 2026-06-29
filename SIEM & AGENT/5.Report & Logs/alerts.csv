@@ -1,0 +1,55 @@
+id,timestamp,event_id,alert_type,severity,description
+1,2026-06-20 16:18:09,2,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+2,2026-06-20 16:18:10,3,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+3,2026-06-20 16:18:12,4,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+4,2026-06-20 16:18:12,4,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 3
+5,2026-06-20 16:18:12,5,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+6,2026-06-20 16:18:12,5,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 4
+7,2026-06-20 16:18:20,6,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+8,2026-06-20 16:18:20,6,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 5
+9,2026-06-20 16:18:20,7,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+10,2026-06-20 16:18:20,7,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 6
+11,2026-06-20 16:19:18,8,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+12,2026-06-20 16:19:18,9,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+13,2026-06-20 16:19:19,10,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+14,2026-06-20 16:19:19,12,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+15,2026-06-20 16:19:19,11,SERVICE_STATUS_CHANGE,medium,Service status change detected on endpoint-agent: Service started detected from system log
+16,2026-06-20 16:20:55,13,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+17,2026-06-20 16:20:55,13,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 7
+18,2026-06-20 16:20:55,14,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+19,2026-06-20 16:20:55,14,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 8
+20,2026-06-20 16:20:56,15,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+21,2026-06-20 16:20:56,15,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 9
+22,2026-06-20 16:20:57,16,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+23,2026-06-20 16:20:57,16,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 10
+24,2026-06-20 16:21:02,17,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+25,2026-06-20 16:21:02,17,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 11
+26,2026-06-20 16:21:03,18,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+27,2026-06-20 16:21:03,18,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 12
+28,2026-06-20 16:21:10,19,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+29,2026-06-20 16:21:10,19,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 13
+30,2026-06-20 16:21:10,20,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+31,2026-06-20 16:21:10,20,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 14
+32,2026-06-20 16:21:11,21,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+33,2026-06-20 16:21:11,21,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 15
+34,2026-06-20 16:21:11,22,FAILED_SSH_LOGIN,high,Failed SSH login detected from endpoint-agent
+35,2026-06-20 16:21:11,22,POSSIBLE_SSH_BRUTE_FORCE,critical,Possible SSH brute force from/on endpoint-agent. Failed attempts in 10 minutes: 16
+36,2026-06-20 16:23:22,23,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+37,2026-06-20 16:23:22,24,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+38,2026-06-20 16:23:22,25,SERVICE_STATUS_CHANGE,medium,Service status change detected on endpoint-agent: Service started detected from system log
+39,2026-06-20 16:23:22,26,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+40,2026-06-20 16:23:22,27,SUCCESSFUL_SSH_LOGIN,low,Successful SSH login detected on endpoint-agent
+41,2026-06-20 16:25:01,28,FAILED_SUDO_ATTEMPT,high,Failed sudo attempt detected on endpoint-agent
+42,2026-06-20 16:25:44,29,FAILED_SUDO_ATTEMPT,high,Failed sudo attempt detected on endpoint-agent
+43,2026-06-20 16:27:59,30,USER_ACCOUNT_CHANGE,high,User account change detected on endpoint-agent: User account creation detected
+44,2026-06-20 16:27:59,31,USER_ACCOUNT_CHANGE,high,User account change detected on endpoint-agent: User account creation detected
+45,2026-06-20 16:27:59,32,USER_ACCOUNT_CHANGE,high,User account change detected on endpoint-agent: User account creation detected
+46,2026-06-20 16:27:59,33,USER_ACCOUNT_CHANGE,high,User account change detected on endpoint-agent: User account deletion detected
+47,2026-06-20 16:27:59,34,USER_ACCOUNT_CHANGE,high,User account change detected on endpoint-agent: User account deletion detected
+48,2026-06-20 16:27:59,35,USER_ACCOUNT_CHANGE,high,User account change detected on endpoint-agent: User account deletion detected
+49,2026-06-20 16:27:59,36,USER_ACCOUNT_CHANGE,high,User account change detected on endpoint-agent: User account deletion detected
+50,2026-06-20 16:32:24,37,FILE_OPERATION,low,File operation detected on endpoint-agent: File created: /tmp/siem_watch/test.txt
+51,2026-06-20 16:40:10,38,FILE_OPERATION,low,File operation detected on endpoint-agent: File created: /tmp/siem_watch/test.txt
+52,2026-06-20 16:40:10,39,FILE_OPERATION,low,File operation detected on endpoint-agent: File modified: /tmp/siem_watch/test.txt
+53,2026-06-20 16:40:10,40,FILE_OPERATION,medium,File operation detected on endpoint-agent: File deleted: /tmp/siem_watch/test.txt
+54,2026-06-20 16:52:25,41,CUSTOM_SECURITY_LOG,medium,Custom security log detected on endpoint-agent: Custom application security log detected

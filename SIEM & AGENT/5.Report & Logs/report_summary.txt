@@ -1,0 +1,39 @@
+SIEM Report Summary
+===================
+Generated at: 2026-06-20 17:09:07
+
+Total events: 41
+Total alerts: 54
+
+Event type summary:
+- failed_ssh: 16
+- successful_ssh: 8
+- user_deleted: 4
+- user_created: 3
+- service_started: 2
+- file_created: 2
+- failed_sudo: 2
+- test_event: 1
+- file_modified: 1
+- file_deleted: 1
+- custom_log: 1
+
+Alert summary:
+- FAILED_SSH_LOGIN (high): 16
+- POSSIBLE_SSH_BRUTE_FORCE (critical): 14
+- SUCCESSFUL_SSH_LOGIN (low): 8
+- USER_ACCOUNT_CHANGE (high): 7
+- FILE_OPERATION (low): 3
+- FAILED_SUDO_ATTEMPT (high): 2
+- SERVICE_STATUS_CHANGE (medium): 2
+- CUSTOM_SECURITY_LOG (medium): 1
+- FILE_OPERATION (medium): 1
+
+Testing scenarios:
+1. Failed/successful SSH login
+2. Failed sudo attempt
+3. User account creation/deletion
+4. Package installation
+5. Service stop/start
+6. File creation/modification/deletion
+7. Custom application log
