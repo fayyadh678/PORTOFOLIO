@@ -1,0 +1,328 @@
+{
+  "info": {
+    "name": "DummyJSON API Testing - QA Portfolio",
+    "description": "Postman collection for QA portfolio. Covers products, carts, users, and negative API testing.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products - Get all products",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/products",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response time is less than 2000ms', function () { pm.expect(pm.response.responseTime).to.be.below(2000); });",
+              "pm.test('Response has products array', function () { const json = pm.response.json(); pm.expect(json).to.have.property('products'); pm.expect(json.products).to.be.an('array'); });",
+              "pm.test('First product has required fields', function () { const product = pm.response.json().products[0]; pm.expect(product).to.have.property('id'); pm.expect(product).to.have.property('title'); pm.expect(product).to.have.property('price'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products - Get product by valid ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/products/1",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "products",
+            "1"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Product id is 1', function () { const json = pm.response.json(); pm.expect(json.id).to.eql(1); });",
+              "pm.test('Product has title and price', function () { const json = pm.response.json(); pm.expect(json.title).to.be.a('string'); pm.expect(json.price).to.be.a('number'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products - Get product by invalid ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/products/999999",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "products",
+            "999999"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 404', function () { pm.response.to.have.status(404); });",
+              "pm.test('Error message exists', function () { const json = pm.response.json(); pm.expect(JSON.stringify(json).length).to.be.above(0); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products - Search products",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/products/search?q=phone",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "products",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "phone"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response has products array', function () { const json = pm.response.json(); pm.expect(json.products).to.be.an('array'); });",
+              "pm.test('Search returns at least one result or valid empty array', function () { const json = pm.response.json(); pm.expect(json.products).to.not.be.undefined; });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Carts - Get all carts",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/carts",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "carts"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response has carts array', function () { const json = pm.response.json(); pm.expect(json.carts).to.be.an('array'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Carts - Get cart by valid ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/carts/1",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "carts",
+            "1"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Cart id is 1', function () { const json = pm.response.json(); pm.expect(json.id).to.eql(1); });",
+              "pm.test('Cart contains products array', function () { const json = pm.response.json(); pm.expect(json.products).to.be.an('array'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Carts - Add cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"userId\": 1, \"products\": [{\"id\": 1, \"quantity\": 1}, {\"id\": 2, \"quantity\": 2}]}"
+        },
+        "url": {
+          "raw": "https://dummyjson.com/carts/add",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "carts",
+            "add"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200 or 201', function () { pm.expect([200, 201]).to.include(pm.response.code); });",
+              "pm.test('Response has products', function () { const json = pm.response.json(); pm.expect(json.products).to.be.an('array'); });",
+              "pm.test('Response has userId', function () { const json = pm.response.json(); pm.expect(json.userId).to.eql(1); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users - Get all users",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/users",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response has users array', function () { const json = pm.response.json(); pm.expect(json.users).to.be.an('array'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users - Get user by valid ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/users/1",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('User id is 1', function () { const json = pm.response.json(); pm.expect(json.id).to.eql(1); });",
+              "pm.test('User has name data', function () { const json = pm.response.json(); pm.expect(json.firstName).to.be.a('string'); pm.expect(json.lastName).to.be.a('string'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Negative - Invalid endpoint",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://dummyjson.com/invalid-endpoint",
+          "protocol": "https",
+          "host": [
+            "dummyjson",
+            "com"
+          ],
+          "path": [
+            "invalid-endpoint"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 404', function () { pm.response.to.have.status(404); });",
+              "pm.test('Response body exists', function () { pm.expect(pm.response.text().length).to.be.above(0); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
